@@ -98,11 +98,13 @@ To add this MCP server to Claude Desktop, follow these steps:
 2. **Add the Configuration**
    Create or edit the configuration file and add the following JSON:
 
+   > **Note**: For the `command` field, use `run_mcp.sh` for Unix/Mac systems or `run_mcp.bat` for Windows systems. Make sure to use the correct absolute path to the script file on your system.
+
    ```json
    {
      "mcpServers": {
        "agentipy": {
-         "command": "/path/to/your/run_mcp.sh",
+         "command": "/path/to/your/run_mcp.sh",  # Replace with .bat for Windows
          "env": {
            "RPC_URL": "your_solana_rpc_url_here",
            "SOLANA_PRIVATE_KEY": "your_private_key_here",
@@ -125,7 +127,8 @@ To add this MCP server to Claude Desktop, follow these steps:
 ```
 agentipy-mcp/
 ├── server.py          # Main entry point
-├── run_mcp.sh         # Run script
+├── run_mcp.sh         # Run script for Unix/Mac
+├── run_mcp.bat        # Run script for Windows
 ├── requirements.txt   # Dependencies
 └── .env              # Environment variables
 ```
